@@ -1,0 +1,116 @@
+body{
+    background-color: hsl(148, 38%, 91%);
+    font-family: 'Karla', monospace;
+    font-weight: 400;
+    color: hsl(187, 24%, 22%);
+    margin: 0;
+}
+main{
+    margin-left: 24.5vw;
+    margin-right: 24.5vw;
+    margin-top: 12.5vh;
+    margin-bottom: 12.5vh;
+    background-color:hsl(148, 38%, 91%);
+}
+input{
+    box-sizing: border-box;
+    display: block;
+    margin-top: 14px;
+    border-color: hsl(186, 15%, 59%);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    height: 49px;
+    width: 100%;
+}
+span{
+    color: hsl(169, 82%, 27%) ;
+}
+h1{
+    font-weight: 700;
+    margin-top: 0;
+}
+p{
+    color: hsl(0, 66%, 54%);
+    display: none;
+}
+button{
+    border-radius: 8px;
+    border: none;
+    margin-top: 34px;
+    height: 59px;
+    width: 100%;
+    background-color: hsl(169, 82%, 27%);
+    color:hsl(0, 0%, 100%) ;
+}
+
+.forms{
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 1rem;
+    padding: 40px;
+    margin: auto;
+    /* margin-top: 4rem; */
+}
+.forms fieldset{
+    margin: 0;
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+.name{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+.name div{
+    flex-grow: 1;
+}
+.name input{
+    /* width: %; */
+}
+/* fieldset input{
+    display: block;
+} */
+.message input{
+    height: 10vh;
+}
+.query div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+.query div fieldset{
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    margin-top: 16px;
+    padding-left: 24px;
+    /* padding-bottom: 16px; */
+    border: 1px solid hsl(186, 15%, 59%);
+    border-radius: 5px;
+    height: 48px;
+    flex-grow: 1;
+}
+.query input, .consent input{
+    height: auto;
+    width: auto;
+    display: inline;
+}
+
+input:hover{
+    border-color: hsl(169, 82%, 27%) ;
+}
+input:focus{
+    outline: none;
+    border-color: hsl(169, 82%, 27%);
+}
+button:hover{
+    background-color:hsl(168, 74%, 13%);
+}
+
+@media (max-width: 775px) {
+    .name, .query div{
+        grid-template-columns: 1fr;
+    }
+
+}
