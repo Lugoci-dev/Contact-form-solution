@@ -23,7 +23,6 @@
 <body>
 
   <div class="dialog" >
-    
     <p><i class="bi bi-check-circle" style="color: hsl(0, 0%, 100%);"></i><b> Message Sent!</b></p>
     <p>Thanks for completing the form. We'll be in touch soon!</p>
   </div>
@@ -38,16 +37,16 @@
             First Name <span>*</span>
           </label>
           <input id="firsN" type="text" >
-          <p>This field is required</p>
-          
+
+          <span class="required" >This field is required</span>
         </div>
         <div>
           <label for="lastN" >
             Last Name <span>*</span>
           </label>
           <input id="lastN" type="text">
-          <p>This field is required</p>
-          
+
+          <span class="required" >This field is required</span>
         </div>
       </fieldset>
   
@@ -56,57 +55,49 @@
             Email Address <span>*</span>
           </label>
           <input id="address" type="email" >
-          <p>Please enter a valid email address</p>
-          <p>This field is required</p>
+
+          <span class="required" >This field is required</span>
+          <span class="invalid" >Please enter a valid gmail address</span>
       </fieldset>
   
       <fieldset class="query">
         <lavel>Query Type <span>*</span></lavel>
         <div>
-          <fieldset>
-            <input id="enquiry" type="radio"  >
+          <fieldset class="none" >
+            <input id="enquiry" type="radio" name="option" onclick="checkRadio(this)" >
             <lavel for="enquiry" >General Enquiry</lavel>
           </fieldset>
-          <fieldset>
-            <input id="request" type="radio"  >
+          <fieldset class="none">
+            <input id="request" type="radio" name="option" onclick="checkRadio(this)" >
             <lavel for="request" >Support Request</lavel>
           </fieldset>
         </div>
-        <p>Please select a query type</p>
+
+        <span class="querySpan" >Please select a query type</span>
       </fieldset>
   
       <fieldset class="message" >
         <lavel for="messag" >Message <span>*</span></lavel>
-        <input id="messag" type="text">
-        <p>This field is required</p>
+        <textarea id="mensage" oninput="autoResize(this)" type="text" ></textarea>
+
+        <span class="required" >This field is required</span>
       </fieldset>
   
       <fieldset class="consent" >
         <input id="consent" type="checkbox" >
         <label for="consent" >I consent to being contacted by the team *</label>
-        <p>To submit this form, please consent to being contacted</p>
-        <button>Submit</button>
+
+        <span class="required" >To submit this form, please consent to being contacted</span>
+        <button id="boton" >Submit</button>
       </fieldset>
     </section>
   </main>
 
-
-
-
-  <aside style="background-color: rgb(73, 52, 52);" >
-    <p style="color: hsl(148, 38%, 91%) ;" >Green 200 (lighter):</p>
-    <p style="color: hsl(169, 82%, 27%) ;" >Green 600 (medium):</p>
-    <p style="color: hsl(0, 66%, 54%) ;" >Red:</p>
-    
-    <p style="color:  hsl(0, 0%, 100%);" >White:</p>
-    <p style="color:  hsl(186, 15%, 59%);" >Grey 500 (medium):</p>
-    <p style="color:  hsl(187, 24%, 22%);" >Grey 900 (darker):</p>
-  </aside>
-  
-  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Lugoci-dev</a>.
   </div>
+
+  <script src="./script.js"></script>
 </body>
 </html>

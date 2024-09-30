@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox Personalizado</title>
+    <style>
+        /* Oculta el checkbox original */
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        /* Estilo del contenedor del checkbox */
+        .checkbox-container {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #007BFF;
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        /* Estilo para el checkbox cuando está marcado */
+        input[type="checkbox"]:checked + .checkbox-container {
+            background-color: #007BFF;
+        }
+
+        /* Estilo para el símbolo de verificación */
+        .checkbox-container::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 7px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+            opacity: 0; /* Inicialmente oculto */
+        }
+
+        /* Muestra el símbolo de verificación cuando el checkbox está marcado */
+        input[type="checkbox"]:checked + .checkbox-container::after {
+            opacity: 1;
+        }
+
+        /* Cambia el color del contenedor al pasar el mouse */
+        .checkbox-container:hover {
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<label>
+    <input type="checkbox">
+    <span class="checkbox-container"></span>
+    Opción 1
+</label>
+
+</body>
+</html>

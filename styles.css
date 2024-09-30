@@ -6,33 +6,32 @@ body{
     margin: 0;
 }
 main{
-    margin-left: 24.5vw;
-    margin-right: 24.5vw;
-    margin-top: 12.5vh;
-    margin-bottom: 12.5vh;
+    margin: 12.5vh 24.5vw;
     background-color:hsl(148, 38%, 91%);
+}
+textarea{
+    box-sizing: border-box;
+    outline: none;
+    padding: 5px;
+    resize: none;
+    overflow: hidden;
+    min-height: 15vh;
+    cursor: pointer;
+    display: block;
+    margin-top: 14px;
+    border: 1px solid hsl(186, 15%, 59%);
+    border-radius: 5px;
+    width: 100%;
 }
 input{
     box-sizing: border-box;
+    cursor: pointer;
     display: block;
     margin-top: 14px;
-    border-color: hsl(186, 15%, 59%);
-    border-style: solid;
-    border-width: 1px;
+    border: 1px solid hsl(186, 15%, 59%);
     border-radius: 5px;
     height: 49px;
     width: 100%;
-}
-span{
-    color: hsl(169, 82%, 27%) ;
-}
-h1{
-    font-weight: 700;
-    margin-top: 0;
-}
-p{
-    color: hsl(0, 66%, 54%);
-    display: none;
 }
 button{
     border-radius: 8px;
@@ -43,13 +42,27 @@ button{
     background-color: hsl(169, 82%, 27%);
     color:hsl(0, 0%, 100%) ;
 }
+span{
+    color: hsl(169, 82%, 27%) ;
+}
+h1{
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 0;
+}
+
+.required, .invalid, .querySpan{
+    margin-top: 8px;
+    color: hsl(0, 66%, 54%);
+    display: none;
+}
+
 
 .forms{
     background-color: hsl(0, 0%, 100%);
     border-radius: 1rem;
     padding: 40px;
     margin: auto;
-    /* margin-top: 4rem; */
 }
 .forms fieldset{
     margin: 0;
@@ -65,45 +78,55 @@ button{
 .name div{
     flex-grow: 1;
 }
-.name input{
-    /* width: %; */
-}
-/* fieldset input{
-    display: block;
-} */
-.message input{
-    height: 10vh;
-}
 .query div{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
 .query div fieldset{
+    display: flex;
+    align-items: center;
     overflow: hidden;
-    text-overflow: ellipsis;
     box-sizing: border-box;
     margin: 0;
     margin-top: 16px;
     padding-left: 24px;
-    /* padding-bottom: 16px; */
     border: 1px solid hsl(186, 15%, 59%);
     border-radius: 5px;
     height: 48px;
-    /* flex-grow: 1; */
+}
+.query input{
+    margin-top: 0;
+    margin-right: 16px;
 }
 .query input, .consent input{
+    accent-color: hsl(169, 82%, 27%);
     height: auto;
     width: auto;
+    width: 16px;
+    height: 16px;
     display: inline;
 }
+.query .shecked{
+    border-color: hsl(169, 82%, 27%);
+    background-color: hsl(148, 38%, 91%);
+}
+.consent label{
+    margin-bottom: 10px;
+} 
+.danger{
+    border-color: hsl(0, 66%, 54%);
+}
 .dialog{
-    /* display: ; */
-    /* position: absolute; */
+    display: none;
+    position: fixed;
+    inset: 0;
+    top: -80%;
     padding: 24px;
     border-radius: 14px;
     background-color: hsl(187, 24%, 22%);
     width: 31.5vw;
+    height: 50px;
     margin: auto;
 }
 .dialog p{
@@ -114,7 +137,7 @@ button{
     margin-top: 0;
 }
 
-input:hover{
+input:hover, textarea:hover{
     border-color: hsl(169, 82%, 27%) ;
 }
 input:focus{
@@ -123,13 +146,17 @@ input:focus{
 }
 button:hover{
     background-color:hsl(168, 74%, 13%);
+    cursor: pointer;
 }
 
 @media (max-width: 775px) {
+    main{
+        margin: 40px 3vw 35px;
+    }
     .name, .query div{
         grid-template-columns: 1fr;
     }
-    .message input{
-        height: 30vh;
+    .message textarea{
+        min-height: 30vh;
     }
 }
